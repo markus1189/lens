@@ -48,6 +48,10 @@ class HasName t where
 instance HasName TyVarBndr where
   name f (PlainTV n) = PlainTV <$> f n
   name f (KindedTV n k) = (`KindedTV` k) <$> f n
+#if defined(__GLASGOW_HASKELL__) && __GLASGOW_HASKELL__ >= 707
+  name f (RoledTV n r) = (`RoledTV` r) <$> f n
+  name f (KindedRoledTV n k r) = (\nm -> KindedRoledTV nm k r) <$> f n
+#endif
 
 instance HasName Name where
   name = id

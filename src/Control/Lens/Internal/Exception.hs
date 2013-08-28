@@ -5,7 +5,10 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 {-# LANGUAGE DeriveDataTypeable #-}
 {-# LANGUAGE FlexibleInstances #-}
-{-# LANGUAGE FlexibleContexts #-}
+#ifdef __GLASGOW_HASKELL__ && __GLASGOW_HASKELL__ >= 707
+{-# LANGUAGE ConstraintKinds #-}
+{-# LANGUAGE PolyKinds #-}
+#endif
 {-# LANGUAGE KindSignatures #-}
 #ifdef TRUSTWORTHY
 {-# LANGUAGE Trustworthy #-}

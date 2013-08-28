@@ -1,3 +1,4 @@
+{-# LANGUAGE CPP #-}
 {-# OPTIONS_GHC -fno-warn-orphans #-}
 -----------------------------------------------------------------------------
 -- |
@@ -24,18 +25,23 @@ import Data.Traversable
 -- Orphan Instances
 -------------------------------------------------------------------------------
 
+#if __GLASGOW_HASKELL__ < 707
 instance Foldable ((,) b) where
   foldMap f (_, a) = f a
+#endif
 
 instance Foldable1 ((,) b) where
   foldMap1 f (_, a) = f a
 
+#if __GLASGOW_HASKELL__ < 707
 instance Traversable ((,) b) where
   traverse f (b, a) = (,) b <$> f a
+#endif
 
 instance Traversable1 ((,) b) where
   traverse1 f (b, a) = (,) b <$> f a
 
+#if __GLASGOW_HASKELL__ < 707
 instance Foldable (Either a) where
   foldMap _ (Left _) = mempty
   foldMap f (Right a) = f a
@@ -43,6 +49,7 @@ instance Foldable (Either a) where
 instance Traversable (Either a) where
   traverse _ (Left b) = pure (Left b)
   traverse f (Right a) = Right <$> f a
+#endif
 
 instance Foldable (Const m) where
   foldMap _ _ = mempty

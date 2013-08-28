@@ -671,6 +671,10 @@ makeLensBody lensName conName i o = do
 plain :: TyVarBndr -> TyVarBndr
 plain (KindedTV t _) = PlainTV t
 plain (PlainTV t) = PlainTV t
+#if defined(__GLASGOW_HASKELL__) && __GLASGOW_HASKELL__ >= 707
+plain (RoledTV t _) = PlainTV t
+plain (KindedRoledTV t _ _) = PlainTV t
+#endif
 
 apps :: Type -> [Type] -> Type
 apps = Prelude.foldl AppT
