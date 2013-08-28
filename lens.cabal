@@ -307,7 +307,7 @@ library
   if impl(ghc<7.4)
     ghc-options: -fno-spec-constr-count
 
-  ghc-options: -Wall -fwarn-tabs -O2 -fdicts-cheap -funbox-strict-fields -fmax-simplifier-iterations=10 -Werror
+  ghc-options: -Wall -fwarn-tabs -O2 -fdicts-cheap -funbox-strict-fields -fmax-simplifier-iterations=10
   hs-source-dirs: src
 
 -- Verify that Template Haskell expansion works

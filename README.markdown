@@ -11,6 +11,14 @@ The [FAQ](https://github.com/ekmett/lens/wiki/FAQ), which provides links to a la
 
 Documentation is available through [github](http://ekmett.github.com/lens/frames.html) (for HEAD) or [hackage](http://hackage.haskell.org/package/lens) for the current and preceding releases.
 
+Build notes for HEAD
+--------------------
+
+The versions of `primitive` and `vector` on hackage don't build on base 4.7; you'll need the HEAD versions from git.haskell.org:
+
+- [primitive](http://git.haskell.org/?p=packages/primitive.git;a=summary)
+- [vector](http://git.haskell.org/?p=packages/vector.git;a=summary)
+
 Field Guide
 -----------
 
