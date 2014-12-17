@@ -14,7 +14,7 @@ Documentation is available through [github](http://ekmett.github.com/lens/frames
 Field Guide
 -----------
 
-[![Lens Hierarchy](https://s3.amazonaws.com/creately-published/h5nyo9ne1)](https://creately.com/diagram/h5nyo9ne1/LBbRz63yg4yQsTXGLtub1bQU4%3D)
+[![Lens Hierarchy](http://i.imgur.com/pTKBDi0.png)](http://i.imgur.com/pTKBDi0.png)
 
 Examples
 --------
